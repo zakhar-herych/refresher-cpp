@@ -1,6 +1,6 @@
 CC=g++
 CFLAGS=-c -Wall
-SOURCES=frame.cpp test_frame.cpp
+SOURCES=frame.cpp concat.cpp permuted_index.cpp test_frame.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=a.out
 

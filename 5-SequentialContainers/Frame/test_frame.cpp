@@ -1,7 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <list>
 #include <string>
 #include "frame.h"
+#include "concat.h"
+#include "permuted_index.h"
 
 using namespace std;
 
@@ -11,9 +14,17 @@ int main(){
 	while(getline(cin, s)){
 		lines.push_back(s);
 	}
-	vector<string> decorated_lines = frame(lines);
+	// Decoration of lines	
+	vector<string> decorated_lines = hcat(lines, frame(lines));
 	for (size_t i=0; i<decorated_lines.size(); i++){
 		cout << decorated_lines[i] << endl;
+	}
+	cout << endl;
+
+	// Permuted index of lines
+	vector<string> permuted_lines = permuted_index(lines);
+	for (size_t i=0; i<permuted_lines.size(); i++){
+		cout << permuted_lines[i] << endl;
 	}
 	return 0;
 }
