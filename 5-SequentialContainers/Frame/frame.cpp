@@ -34,3 +34,14 @@ vector<string> frame(const vector<string>& s){
 	ret.push_back(border);
 	return ret;
 }
+
+vector<string> center(const vector<string>& s){
+	vector<string> ret;
+	int width = frame_width(s);
+	for (size_t i=0; i<s.size(); i++){
+		string spaces((width-s[i].size())/2, ' ');
+		string spaces2(width-s[i].size()-spaces.size(), ' ');
+		ret.push_back(spaces + s[i] + spaces2);
+	}
+	return ret;
+}

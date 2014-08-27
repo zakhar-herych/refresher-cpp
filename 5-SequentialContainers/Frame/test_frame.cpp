@@ -15,7 +15,7 @@ int main(){
 		lines.push_back(s);
 	}
 	// Decoration of lines	
-	vector<string> decorated_lines = hcat(lines, frame(lines));
+	vector<string> decorated_lines = hcat(lines, frame(center(lines)));
 	for (size_t i=0; i<decorated_lines.size(); i++){
 		cout << decorated_lines[i] << endl;
 	}
