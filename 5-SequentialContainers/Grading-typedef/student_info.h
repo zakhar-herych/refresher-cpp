@@ -13,7 +13,7 @@ struct Student_info {
 	std::vector<double> homeworks;
 };
 
-typedef std::list<Student_info> container;
+typedef std::vector<Student_info> container;
 
 std::istream& read_student_info(std::istream& is, Student_info& info);
 std::istream& read_homework(std::istream& in, std::vector<double>& homework);
