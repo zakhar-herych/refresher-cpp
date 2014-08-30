@@ -70,5 +70,10 @@ int main(){
 	transform(vec.begin(), vec.end(), vec.begin(), lambda_gen(2));
 	for_each(vec.begin(), vec.end(), trace_lambda);
 	cout << endl << endl;
+
+	// Recursive lambdas
+	function<int(int)> fib = [&fib] (int n) { return n < 2? 1 : fib(n-1) + fib(n-2); };
+	cout << fib(10);
+	cout << endl << endl;
 	return 0;
 }
