@@ -1,0 +1,14 @@
+<noun> cat
+<noun> dog
+<noun> horse
+<noun-phrase> <noun>
+<noun-phrase> <adjective> <noun>
+<adjective> large
+<adjective> black
+<adjective> happy
+<verb> goes
+<verb> sits
+<verb> stands
+<location> wherever it wants
+<location> not far away
+<sentence> the <noun-phrase> <verb> <location>
