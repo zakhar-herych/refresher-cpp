@@ -1,0 +1,22 @@
+CC=g++
+CFLAGS=-c `pkg-config --cflags --libs protobuf` -Wall
+EXECUTABLE=a.out
+SOURCES=read_person.cpp addressbook.pb.cc
+OBJECTS=read_person.o addressbook.pb.o
+
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(OBJECTS) -o $@ -L/usr/local/lib -lprotobuf
+
+read_person.o: read_person.cpp addressbook.pb.cc
+	$(CC) $(CFLAGS) -o read_person.o read_person.cpp
+
+addressbook.pb.o: addressbook.pb.cc
+	$(CC) $(CFLAGS) -o addressbook.pb.o addressbook.pb.cc
+
+addressbook.pb.cc: addressbook.proto
+	protoc --cpp_out=. addressbook.proto
+
+clean:
+	rm -rf *.o a.out *.pb.cc *.pb.h
